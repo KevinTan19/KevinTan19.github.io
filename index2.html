@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+<body>
+    <header id="header">
+        <p id="web-name">FoxTopUp</p>
+
+    </header>
+    <p id="helloName" class="headerText"> hello <span  id="passedNama"></span></p>
+    <p id="helloUmur" class="headerText"> umur kamu <span id="passedUmur"></span></p>
+
+    <p class="headerText">Silahkan Pilih nominal Top Up yang anda inginkan</p>
+
+    
+    <div class="contentCentered">
+        <img id="imgGame" >
+    </div>
+    
+   <div id="showHarga" class="contentCentered">
+    <p  class="tulisanTotal"><span id="ngilang" class="">  Total pembayaran anda</span><br><span id="totalPembayaran"></span></p>
+
+
+   </div>
+  
+   <form action="index3.html" class="contentCentered">
+    <div class="contentCentered blocked">
+        <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp50" value="Rp.50.000" required>
+        <label class="btn btn-primary radio-diamond" for="topUp50">50 <br> Diamonds</label>
+        <input onclick="diamonSelected()" type="radio" class="btn-check " name="diamond" id="topUp100" value="Rp.100.000" >
+        <label class="btn btn-primary radio-diamond" for="topUp100">100 <br> Diamonds</label>
+        <input onclick="diamonSelected()" type="radio" class="btn-check" name="diamond" id="topUp150" value="Rp.150.000" >
+        <label class="btn btn-primary radio-diamond" for="topUp150">150 <br> Diamonds</label>
+       </div>
+    <input  onclick="submitPembayaran()" id="lakukanPembayaran" class="buttonPrime" type="submit" value="Lakukan Pembayaran">
+   </form>
+
+</body>
+<script >
+    let passedNama = document.getElementById('passedNama').innerHTML = localStorage.getItem('valueNama')
+
+
+    let passedUmur = document.getElementById('passedUmur').innerHTML = localStorage.getItem('valueUmur')
+
+    let getGame = localStorage.getItem('valueGame')
+
+    let passedGame = document.getElementById('imgGame').classList.add(getGame)
+
+    function submitPembayaran(){
+
+
+        let selectedDiamonds = document.querySelector('input[name="diamond"]:checked').value;
+        localStorage.setItem('valueDiamond', selectedDiamonds)
+        
+        let submitBayar = document.getElementById('lakukanPembayaran')
+        let checked = document.getElementsByName('diamond').value
+
+        // if(checked === undefined){
+        //  let totalPembayaran = document.getElementById('totalPembayaran').innerHTML = `Harap Pilih Diamond Terlebih Dahulu`
+        //  document.getElementById('ngilang').classList.add('ilang')
+
+        // }
+        
+        return false
+    }
+    
+    // function diamonSelected(){
+
+    //     let totalPembayaran = document.getElementById('totalPembayaran').innerText = document.querySelector('input[name="diamond"]:checked').value;
+    //     document.getElementById('ngilang').classList.remove('ilang')
+
+    // }
+    let totalBayar=0
+    function diamonSelected(){
+        let nominal=document.querySelector('input[name="diamond"]:checked').value;
+        console.log(nominal);
+        let tarif={
+            "Rp.50.000":50000,
+            "Rp.100.000":100000,
+            "Rp.150.000":150000
+        }
+        if (passedUmur<=18) {
+            let buycap=50000
+            //buycap beli
+            if (totalBayar<buycap) {
+                totalBayar+=tarif[nominal]
+            } else{
+                alert('anda dibawah umur')
+            }
+        }else{
+         totalBayar+=tarif[nominal]
+        }
+        formatUang='Rp '+(totalBayar/1000).toFixed(3)
+
+        let totalPembayaran = document.getElementById('totalPembayaran').innerText = formatUang
+        localStorage.setItem('totalBayar', totalBayar)
+        document.getElementById('ngilang').classList.remove('ilang')
+    }
+
+    
+    
+    </script>
+</html>

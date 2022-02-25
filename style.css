@@ -1,0 +1,206 @@
+body {
+  height: 100%;
+  margin: 0;
+  background: url(asset/bg.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header {
+  background-color: aliceblue;
+}
+#web-name {
+  text-align: center;
+  color: royalblue;
+  background: linear-gradient(
+    90deg,
+    rgba(152, 231, 255, 1) 0%,
+    rgba(233, 152, 224, 1) 100%
+  );
+  font-size: 50px;
+  margin: 0px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.pubg {
+  background-image: url(asset/pubg.png);
+  background-size: contain;
+  border: none;
+}
+.ff {
+  background-image: url(asset/ff.png);
+  background-size: contain;
+  border: none;
+}
+.ml {
+  background-image: url(asset/ml.jpeg);
+  background-size: contain;
+  border: none;
+}
+.tulisan-konten {
+  font-size: 20px;
+  font-family: "Chakra Petch", sans-serif;
+}
+.logo {
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+}
+#icon-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+#form-input {
+  background: linear-gradient(
+    90deg,
+    rgba(152, 231, 255, 1) 0%,
+    rgba(233, 152, 224, 1) 100%
+  );
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 100px;
+  width: 70%;
+  text-align: center;
+  padding: 80px 30px 80px 30px;
+  border-radius: 20px;
+}
+.text-input {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Chakra Petch", sans-serif;
+  border: none;
+  margin-bottom: 5px;
+}
+.buttonPrime {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgb(207, 152, 255) 0%,
+    rgb(226, 233, 152) 100%
+  );
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 7px;
+}
+#cc-selector input {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.pubg {
+  background-image: url(asset/pubg.png);
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.ff {
+  background-image: url(asset/ff.png);
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.ml {
+  background-image: url(asset/ml.jpeg);
+  width: 200px;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.contentCentered {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.gameCheckbox {
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 175px;
+  height: 175px;
+  border-radius: 15px;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(0.7);
+  -moz-filter: brightness(1.8) grayscale(1) opacity(0.7);
+  filter: brightness(1.8) grayscale(1) opacity(0.7);
+}
+#cc-selector input:active + .gameCheckbox {
+  opacity: 0.9;
+}
+#cc-selector input:checked + .gameCheckbox {
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+}
+.gameCheckbox:hover {
+  -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+  -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+  filter: brightness(1.2) grayscale(0.5) opacity(0.9);
+}
+.headerText {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Chakra Petch", sans-serif;
+  color: royalblue;
+  background: linear-gradient(
+    90deg,
+    rgba(152, 231, 255, 1) 0%,
+    rgba(233, 152, 224, 1) 100%
+  );
+  width: 20%;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 39px;
+  padding: 20px;
+}
+.radio-diamond {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.tulisanTotal {
+  color: aqua;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 35px;
+  text-align: center;
+}
+#lakukanPembayaran {
+  margin-bottom: 30px;
+  display: block;
+}
+.ilang {
+  display: none;
+}
+.finalHeader {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Chakra Petch", sans-serif;
+  color: royalblue;
+  background: linear-gradient(
+    90deg,
+    rgb(152, 162, 255) 0%,
+    rgb(238, 146, 207) 100%
+  );
+  width: 20%;
+  margin: auto;
+  margin-top: 200px;
+  border-radius: 39px;
+  padding: 20px;
+}
